@@ -39,7 +39,7 @@
               </p>
             </td>
             <td width="13%">
-              <img src=images/profile.png  width="266">
+              <img src=images/profile2.png  width="266">
             </td>
           </tr>
         </table>
@@ -55,42 +55,94 @@
           </tr>
         </table>
         
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="2" cellpadding="40">
           
-<tr onmouseout="stop()" onmouseover="start()">
-    <td width="25%">
-    <div class="one">
-        <div class="two" id="fold_map"><img src='images/pub/fold_map/crane.jpg'></div>
-        <img src='images/pub/fold_map/crane_foldpattern.png'>
-    </div>
-    <script type="text/javascript">
-        function start() {
-        document.getElementById('fold_map').style.opacity = "1";
-        }
+        </td>
+        <tr onmouseout="tof_align_refine_stop()" onmouseover="tof_align_refine_start()">
+          <td width="25%">
+            <div class="one">
+              <div class="two" id='tof_align_refine'>
+                <img src='images/pub/tof_align_refine/1.png'></div>
+              <img src='images/pub/tof_align_refine/2.png'>
+            </div>
+            <script type="text/javascript">
+              function tof_align_refine_start() {
+                document.getElementById('tof_align_refine').style.opacity = "1";
+              }
 
-        function stop() {
-        document.getElementById('fold_map').style.opacity = "0";
-        }
-        stop()
-    </script>
-    </td>
-    <td valign="middle" width="75%">
-    <a href='https://arxiv.org/abs/1804.03936'>
-        <papertitle>Computing Quasiconformal Folds</papertitle>
-    </a>
-    <br>
-    Di Qiu, Ka-Chun Lam, Lok-Ming Lui
-    <br><br>
-    <em>SIAM Journal of Imaging Science</em>, 2018
-    <br>
-    <p>Computing folding and unfolding maps via a generalized form of quasiconformal mapping and crease geometry inference.</p>
-    </td>
-</tr>
+              function tof_align_refine_stop() {
+                document.getElementById('tof_align_refine').style.opacity = "0";
+              }
+              tof_align_refine_stop()
+            </script>
+          </td>
+          <td valign="middle" width="75%">
+            
+            <papertitle>Deep End-to-End Alignment and Refinement for Time-of-Flight RGB-D Modules</papertitle>
+            </a>
+            <br><br>
+            <strong>Di Qiu</strong>,
+            Jiahao Pang, Chengxi Yang, Wenxiu Sun
+            <br>
+            <em>ICCV</em>, 2019
+            <br>
+      
+      
+            
+            <p>Cross-modal flow estimation and Time-of-Flight depth refinement using deep learning.</p>
+          </td>
+        </tr>
+        
+      </td>
+      <tr onmouseout="fold_map_stop()" onmouseover="fold_map_start()">
+        <td width="25%">
+          <div class="one">
+            <div class="two" id='fold_map'><img src='images/pub/fold_map/1.png'></div>
+            <img src='images/pub/fold_map/2.png'>
+          </div>
+          <script type="text/javascript">
+            function fold_map_start() {
+              document.getElementById('fold_map').style.opacity = "1";
+            }
 
+            function fold_map_stop() {
+              document.getElementById('fold_map').style.opacity = "0";
+            }
+            fold_map_stop()
+          </script>
+        </td>
+        <td valign="middle" width="75%">
+          <a href="https://arxiv.org/abs/1804.03936">
+          <papertitle>Computing Quasiconformal Folds</papertitle>
+          </a>
+          <br><br>
+          <strong>Di Qiu</strong>,
+          Ka-Chun Lam, Lok-Ming Lui
+          <br>
+          <em>SIAM Journal of Imaging Science</em>, 2018
+          <br>
+    
+    
+          
+          <p>Computing folding and unfolding maps via a generalized form of quasiconformal mapping and crease geometry inference.</p>
+        </td>
+      </tr>
 
         </table>
 
          
+        
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tr>
+              <td>
+                <br>
+                <hr> </hr>
+                <p align="center">
+                  <font size="2"> This theme is adpted from Johnathan T. Barron's page.
+                </p>
+              </td>
+             </tr>
+        </table>
     </tr>
   </table>
 </body>
