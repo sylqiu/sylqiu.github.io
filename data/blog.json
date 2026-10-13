@@ -1,0 +1,498 @@
+[
+  {
+    "id": "2019-10-20-some-procrustes-type-problems",
+    "title": "Some Procrustes-type Problems",
+    "date": "2019-10-20",
+    "tags": [
+      "linear algebra",
+      "optimization"
+    ],
+    "excerpt": "Procrustes in the Greek mythology fits his guests to his bed. The mathematical problem after his name has a similar flavour. Suppose we have two set of vectors X X X , Y Y Y , where columns represent …",
+    "source": "https://sylqiu.blogspot.com/2019/10/procrustes-problem-and-its-variant.html"
+  },
+  {
+    "id": "2019-06-16-notes-on-light-transport-in-graphics-and-vision",
+    "title": "Notes on Light Transport in Graphics and Vision",
+    "date": "2019-06-16",
+    "tags": [
+      "computer graphics",
+      "computer vision"
+    ],
+    "excerpt": "In this note I will approach light transport in two directions. The first is from the perspective of simulation and modeling, the other is from the perspective of vision and inference. We will see dif…",
+    "source": "https://sylqiu.blogspot.com/2019/06/notes-on-light-transport-in-graphics.html"
+  },
+  {
+    "id": "2018-10-21-notes-on-multiple-view-geometry",
+    "title": "Notes on multiple view geometry",
+    "date": "2018-10-21",
+    "tags": [
+      "computer vision"
+    ],
+    "excerpt": "In this short note I introduce some elements of projective geometry for cameras, based on my understanding of the materials in Multiple View Geometry by Hartley and Zisserman [1]. This is important to…",
+    "source": "https://sylqiu.blogspot.com/2018/10/notes-on-multiple-view-geometry.html"
+  },
+  {
+    "id": "2018-07-03-the-as-rigid-as-possible-arap-shape-manipulation-paradigm",
+    "title": "The as-rigid-as-possible (ARAP) shape manipulation paradigm",
+    "date": "2018-07-03",
+    "tags": [
+      "computer graphics",
+      "discrete conformal geometry"
+    ],
+    "excerpt": "In an Euclidean space R d {\\mathbb{R}^{d}} R d , rigid motions are simply translations and rotations, which can be identified with the action of the groups R d {\\mathbb{R}^{d}} R d and S O ( d ) {SO(d…",
+    "source": "https://sylqiu.blogspot.com/2018/07/the-as-rigid-as-possible-arap-shape.html"
+  },
+  {
+    "id": "2018-05-01-high-dimensional-filtering-with-permutohedral-lattice",
+    "title": "High-dimensional filtering with permutohedral lattice",
+    "date": "2018-05-01",
+    "tags": [
+      "computer vision",
+      "imaging",
+      "numerical methods"
+    ],
+    "excerpt": "High-dimensional filtering refers to convolution with kernel depending on more than the spatial variable. Examples include the bilateral filtering , I i ′ = ∑ j = 1 N k ( f i − f j ) I j , \\displaysty…",
+    "source": "https://sylqiu.blogspot.com/2018/05/high-dimensional-filtering-with.html"
+  },
+  {
+    "id": "2018-04-14-math-3310-note-11-gradient-and-conjugate-gradient-methods",
+    "title": "MATH 3310 Note 11: Gradient and conjugate gradient methods",
+    "date": "2018-04-14",
+    "tags": [
+      "cuhk.math3310",
+      "linear algebra",
+      "numerical methods",
+      "optimization",
+      "teaching"
+    ],
+    "excerpt": "1. The steepest descent Solving a linear system B x = c \\displaystyle B{\\bf x}={\\bf c} B x = c can be recast as a optimization problem min ⁡ x ∈ R n f ( x ) = ∥ B x − c ∥ 2 . ( 1 ) \\displaystyle \\min_…",
+    "source": "https://sylqiu.blogspot.com/2018/04/math-3310-note-11-gradient-and.html"
+  },
+  {
+    "id": "2018-04-01-math3310-note-10-numerical-methods-for-linear-eigenvalue-pro",
+    "title": "MATH3310 Note 10: Numerical methods for linear eigenvalue problems",
+    "date": "2018-04-01",
+    "tags": [
+      "cuhk.math3310",
+      "linear algebra",
+      "numerical methods",
+      "teaching"
+    ],
+    "excerpt": "1. The power method: finding the eigenvalues and eigenvectors The power method for eigenvalue problem takes the advantage of the discrepancy between the eigenvalues. Strictly speaking, it is the diffe…",
+    "source": "https://sylqiu.blogspot.com/2018/04/math3310-note-10-numerical-methods-for.html"
+  },
+  {
+    "id": "2018-03-24-math3310-note-9-iterative-methods-for-linear-systems-continu",
+    "title": "MATH3310 Note 9: Iterative methods for linear systems, continued",
+    "date": "2018-03-24",
+    "tags": [
+      "cuhk.math3310",
+      "linear algebra",
+      "numerical methods",
+      "teaching"
+    ],
+    "excerpt": "1. Successive over-relaxation When the classical methods of Jacobi and Gauss-Seidel converge, they converge monotonically. It is thus natural to go beyond a little in the descending direction, a metho…",
+    "source": "https://sylqiu.blogspot.com/2018/03/math3310-note-9-iterative-methods-for.html"
+  },
+  {
+    "id": "2018-03-18-math3310-note-8-iterative-methods-for-linear-systems-an-intr",
+    "title": "MATH3310 Note 8: Iterative methods for linear systems, an introduction",
+    "date": "2018-03-18",
+    "tags": [
+      "cuhk.math3310",
+      "linear algebra",
+      "numerical methods",
+      "teaching"
+    ],
+    "excerpt": "The main problem of interest here is to solve a square linear system, which in matrix form reads A x = b , A ∈ R N × N . \\displaystyle Ax=b,\\quad A\\in\\mathbb{R}^{N\\times N}. A x = b , A ∈ R N × N . Th…",
+    "source": "https://sylqiu.blogspot.com/2018/03/math3310-note-8-iterative-methods-for.html"
+  },
+  {
+    "id": "2018-03-03-math3310-note-7-the-discrete-fourier-transform-fft",
+    "title": "MATH3310 Note 7: The discrete Fourier transform; FFT",
+    "date": "2018-03-03",
+    "tags": [
+      "cuhk.math3310",
+      "numerical methods"
+    ],
+    "excerpt": "1. The discrete Fourier transform Perhaps the most useful way to introduce the discrete Fourier transform is to look at what properties make it so important in practice. Long story short, discrete Fou…",
+    "source": "https://sylqiu.blogspot.com/2018/03/math3310-note-7-discrete-fourier.html"
+  },
+  {
+    "id": "2018-03-01-densecrf-correlation-filter-and-their-end-to-end-training",
+    "title": "DenseCRF, Correlation Filter and Their End-to-End Training",
+    "date": "2018-03-01",
+    "tags": [
+      "computer vision",
+      "imaging",
+      "numerical methods"
+    ],
+    "excerpt": "In this post we will review two classical techniques in computer vision. They are Conditional random field in semantic segmentation; Correlation filter in object tracking. And we will review some rece…",
+    "source": "https://sylqiu.blogspot.com/2018/03/topics-in-computer-vision-densecrf.html"
+  },
+  {
+    "id": "2018-02-14-math3310-note-6-the-fourier-transform-on",
+    "title": "MATH3310 Note 6: The Fourier transform on $\\mathbb{R}$",
+    "date": "2018-02-14",
+    "tags": [
+      "cuhk.math3310",
+      "Fourier analysis",
+      "teaching"
+    ],
+    "excerpt": "In many ways the Fourier transform on R {\\mathbb{R}} R f ( x ) ↦ f ^ ( ω ) : = ∫ R f ( x ) e − i ω x d x , x , ω ∈ R \\displaystyle f(x)\\mapsto\\hat{f}(\\omega):=\\int_{\\mathbb{R}}f(x)e^{-i\\omega x}dx,\\qu…",
+    "source": "https://sylqiu.blogspot.com/2018/02/math3310-note-6-fourier-transform-on.html"
+  },
+  {
+    "id": "2018-02-10-math3310-note-5-1d-heat-equation-on-the-interval",
+    "title": "MATH3310 Note 5: 1D heat equation on the interval $[0,2\\pi]$",
+    "date": "2018-02-10",
+    "tags": [
+      "cuhk.math3310",
+      "Fourier analysis",
+      "PDE",
+      "teaching"
+    ],
+    "excerpt": "In this note we recap and clarify on what we learned about using spectral (Fourier series) method to solve a fundamental constant coefficient linear differential equation with simple initial/boundary …",
+    "source": "https://sylqiu.blogspot.com/2018/02/math3310-note-5-1d-heat-equation-on.html"
+  },
+  {
+    "id": "2018-02-04-math3310-note-4-convolution",
+    "title": "MATH3310 Note 4: Convolution",
+    "date": "2018-02-04",
+    "tags": [
+      "cuhk.math3310",
+      "Fourier analysis",
+      "teaching"
+    ],
+    "excerpt": "1. Convolution The notion of convolution is so fundamental in Fourier analysis and in applications (guess anyone hasn't heard of the convolutional neural network ?). We have seen its appearance last t…",
+    "source": "https://sylqiu.blogspot.com/2018/02/math3310-note-4-convolution.html"
+  },
+  {
+    "id": "2018-01-27-math3310-note-3-best-approximation-property-of-fourier-serie",
+    "title": "MATH3310 Note 3: Best approximation property of Fourier series; \"good\" and \"bad\" approximation to the Dirac delta",
+    "date": "2018-01-27",
+    "tags": [
+      "cuhk.math3310",
+      "Fourier analysis",
+      "teaching"
+    ],
+    "excerpt": "1. Best approximation property of Fourier series Last time we considered the vector space C ( [ 0 , 2 π ] , C ) {C([0,2\\pi],\\mathbb{C})} C ([ 0 , 2 π ] , C ) (with coefficient in C {\\mathbb{C}} C , of…",
+    "source": "https://sylqiu.blogspot.com/2018/01/math3310-note-3.html"
+  },
+  {
+    "id": "2018-01-20-math3310-note-2-real-and-complex-fourier-series-gibbs-phenom",
+    "title": "MATH3310 Note 2: Real and complex Fourier series; Gibbs phenomenon",
+    "date": "2018-01-20",
+    "tags": [
+      "cuhk.math3310",
+      "Fourier analysis",
+      "teaching"
+    ],
+    "excerpt": "The idea of representing a general function on e.g. the interval [ 0 , 2 π ] {[0,2\\pi]} [ 0 , 2 π ] by an infinite sum of sines and cosines was invented by Joseph Fourier (1768-1830) in the context of…",
+    "source": "https://sylqiu.blogspot.com/2018/01/math3310-note-2.html"
+  },
+  {
+    "id": "2018-01-16-tutorial-on-large-scale-optimisation-ii",
+    "title": "Tutorial on large scale optimisation: II",
+    "date": "2018-01-16",
+    "tags": [
+      "numerical methods",
+      "optimization",
+      "teaching"
+    ],
+    "excerpt": "In the last post we have developed background and basic algorithms such as forward-backward splitting and Douglas-Rachford splitting in large scale optimisation, where ADMM is a equivalent to applying…",
+    "source": "https://sylqiu.blogspot.com/2018/01/tutorial-on-large-scale-optimisation-ii.html"
+  },
+  {
+    "id": "2018-01-14-math3310-note-1-introduction-traveling-between-continuum-and",
+    "title": "MATH3310 Note 1: Introduction: traveling between continuum and discretum",
+    "date": "2018-01-14",
+    "tags": [
+      "cuhk.math3310",
+      "teaching"
+    ],
+    "excerpt": "1. Analogies between continuum and discretum It is always a good practice (in my opinion) as an applied maths student to understand the analogies between continuous formulation of a problem/notion and…",
+    "source": "https://sylqiu.blogspot.com/2018/01/math3310-tutorial-1.html"
+  },
+  {
+    "id": "2017-12-29-tutorial-on-large-scale-optimisation-i",
+    "title": "Tutorial on large scale optimisation:I",
+    "date": "2017-12-29",
+    "tags": [
+      "numerical methods",
+      "optimization",
+      "teaching"
+    ],
+    "excerpt": "In this post we study some fundamental mathematical notions and algorithms for optimisation. As is typical today, the problems in application often involve ∼ 10 6 \\sim 10^6 ∼ 1 0 6 number of variables…",
+    "source": "https://sylqiu.blogspot.com/2017/12/tutorial-on-large-scale-optimisationi.html"
+  },
+  {
+    "id": "2017-12-05-some-applications-of-littlewood-paley-decompositions",
+    "title": "Some applications of Littlewood Paley decompositions",
+    "date": "2017-12-05",
+    "tags": [
+      "harmonic analysis"
+    ],
+    "excerpt": "Throughout this post d ∈ N {d\\in\\mathbb{N}} d ∈ N will be a fixed dimension constant. Recall that the k {k} k -th Littlewood-Paley \"projection'' of f ∈ S ( R d ) {f\\in\\mathcal{S}(\\mathbb{R}^{d})} f ∈ …",
+    "source": "https://sylqiu.blogspot.com/2017/12/some-applications-of-littlewood-paley.html"
+  },
+  {
+    "id": "2017-11-01-some-examples-of-the-calder-n-zygmund-operators",
+    "title": "Some Examples of the Calderón-Zygmund operators",
+    "date": "2017-11-01",
+    "tags": [
+      "elliptic theory",
+      "Fourier analysis",
+      "harmonic analysis",
+      "PDE"
+    ],
+    "excerpt": "In this post we study various examples of ``singular integral operator''. Those included here are The Riesz transforms, which recover the Hessian of a Schwartz function from its Laplacian; Regular par…",
+    "source": "https://sylqiu.blogspot.com/2017/11/some-examples-of-calderon-zygmund.html"
+  },
+  {
+    "id": "2017-09-30-extrinsic-surface-geometry-quaternions-and-spin-transforms",
+    "title": "Extrinsic surface geometry, Quaternions and Spin transforms",
+    "date": "2017-09-30",
+    "tags": [
+      "algebraic topology",
+      "differential geometry"
+    ],
+    "excerpt": "In this post we discuss some elements of the theory of surface conformal immersions in the language of quaternions. The principal motivation for this is from Keenan Crane's 2011 paper. The goal is to …",
+    "source": "https://sylqiu.blogspot.com/2017/09/extrinsic-surface-geometry-quaternions.html"
+  },
+  {
+    "id": "2017-08-17-rep-res-mobiles-de-cartan",
+    "title": "Repères Mobiles de Cartan",
+    "date": "2017-08-17",
+    "tags": [
+      "differential geometry"
+    ],
+    "excerpt": "In this article we present the basic methods of Cartan's moving frame method, and we apply it to classical theory of surfaces. Of importance is the use of exterior differential applied to systems of e…",
+    "source": "https://sylqiu.blogspot.com/2017/08/reperes-mobiles-de-cartan.html"
+  },
+  {
+    "id": "2017-07-31-some-discussion-on-energy-landscapes-stochastic-gradient-des",
+    "title": "Some discussion on energy landscapes, stochastic gradient descent and its continuous time dynamics",
+    "date": "2017-07-31",
+    "tags": [
+      "archive",
+      "machine learning",
+      "optimization",
+      "statistical physics"
+    ],
+    "excerpt": "In supervised learning, where we have a training set, namely an input-output correspondence ( x , y ) {(x,y)} ( x , y ) for a sample of the input data, the \"empirical loss function'' of a deep learnin…",
+    "source": "https://sylqiu.blogspot.com/2017/07/some-discussion-on-energy-landscapes.html"
+  },
+  {
+    "id": "2017-07-24-a-short-tour-to-stochastic-calculus",
+    "title": "A short tour to stochastic calculus",
+    "date": "2017-07-24",
+    "tags": [
+      "probability theory",
+      "stochastic differential equation"
+    ],
+    "excerpt": "The intention for this non-technical article is to quickly build up some formalism and idea about Itô's calculus, and its relation to linear parabolic equations of diffusion type. The effort is spent …",
+    "source": "https://sylqiu.blogspot.com/2017/07/a-short-tour-to-stochastic-calculus.html"
+  },
+  {
+    "id": "2017-07-06-singular-integrals-a-starter",
+    "title": "Singular integrals: a starter",
+    "date": "2017-07-06",
+    "tags": [
+      "Fourier analysis",
+      "harmonic analysis"
+    ],
+    "excerpt": "We begin with the simpliest subject of our current theme of study, namely the Hilbert transform . It often appears in two forms. One is as a Fourier multiplier operator: in the case the underlying spa…",
+    "source": "https://sylqiu.blogspot.com/2017/07/singular-integrals-starter.html"
+  },
+  {
+    "id": "2017-06-15-distributions-in-and-the-fourier-transform",
+    "title": "Distributions in $\\mathbb{R}^{d}$ and the Fourier transform",
+    "date": "2017-06-15",
+    "tags": [
+      "functional analysis",
+      "harmonic analysis"
+    ],
+    "excerpt": "Let us recall the integration by part formula: ∫ Ω ∂ f ∂ x i φ d x + ∫ Ω f ∂ φ ∂ x i d x = ∫ ∂ Ω f φ ν i d Γ \\displaystyle \\int_{\\Omega}\\frac{\\partial f}{\\partial x_{i}}\\varphi\\,dx+\\int_{\\Omega}f\\frac…",
+    "source": "https://sylqiu.blogspot.com/2017/06/distributions-in-mathbbrd-and-fourier.html"
+  },
+  {
+    "id": "2017-04-24-schauder-estimate",
+    "title": "Schauder estimate",
+    "date": "2017-04-24",
+    "tags": [
+      "elliptic theory",
+      "harmonic analysis",
+      "PDE"
+    ],
+    "excerpt": "From known results in potential theory for the Poisson equation Δ u = f , \\displaystyle \\Delta u=f, Δ u = f , Schauder was able to develop a linear elliptic theory in the framework of classical soluti…",
+    "source": "https://sylqiu.blogspot.com/2017/04/schauder-estimate.html"
+  },
+  {
+    "id": "2017-03-26-interpolation-of-estimates",
+    "title": "Interpolation of $ {L^{p}}$ estimates",
+    "date": "2017-03-26",
+    "tags": [
+      "harmonic analysis",
+      "real analysis"
+    ],
+    "excerpt": "In this post I collect some background material of the very useful interpolation technique, i.e. the Marcinkiewicz interpolation theorem , which is used for example in the L p L^p L p -estimates of st…",
+    "source": "https://sylqiu.blogspot.com/2017/03/interpolation-of-lp-estimates.html"
+  },
+  {
+    "id": "2017-02-12-convergence-and-compactness-ii-weak-compactness",
+    "title": "Convergence and compactness II: Weak compactness",
+    "date": "2017-02-12",
+    "tags": [
+      "functional analysis",
+      "real analysis"
+    ],
+    "excerpt": "This post is a continuation of the previous post on convergence and compactness. Here we study the important notions of weak and weak* convergence in details, and to provide ourselves a fundamental fr…",
+    "source": "https://sylqiu.blogspot.com/2017/02/ii-weak-compactness.html"
+  },
+  {
+    "id": "2017-02-08-a-brief-introduction-to-the-beltrami-equation-and-its-fem-di",
+    "title": "A brief introduction to the Beltrami equation and its FEM discretization",
+    "date": "2017-02-08",
+    "tags": [
+      "complex analysis",
+      "discrete conformal geometry",
+      "numerical methods"
+    ],
+    "excerpt": "This post is an exposition to some of the background material and details of the linear Beltrami solver, which is an indispensable tool for my group of research. Interested readers can find relevant c…",
+    "source": "https://sylqiu.blogspot.com/2017/02/linear-beltrami-solver.html"
+  },
+  {
+    "id": "2017-01-24-convergence-and-compactness-i-the-sequential-tychonoff-and-a",
+    "title": "Convergence and Compactness I: the Sequential Tychonoff and Arzelá-Ascoli",
+    "date": "2017-01-24",
+    "tags": [
+      "functional analysis",
+      "PDE",
+      "real analysis"
+    ],
+    "excerpt": "Following the Terry's notes (up to some reorganising and exercise solving), I aim to develop the sequential Tychonoff theorem, which says an at most countable product of sequential compact spaces is a…",
+    "source": "https://sylqiu.blogspot.com/2017/01/convergence-and-compactness-i.html"
+  },
+  {
+    "id": "2017-01-10-qr-algorithm-for-eigenvalue-problem",
+    "title": "QR-Algorithm for Eigenvalue Problem",
+    "date": "2017-01-10",
+    "tags": [
+      "linear algebra",
+      "numerical methods"
+    ],
+    "excerpt": "I still remember Prof. Gilbert Strang in his linear algebra course once commented (which I learned from YouTube) that the Jordan canonical form of a matrix (see also my discussion here in a more gener…",
+    "source": "https://sylqiu.blogspot.com/2017/01/qr-algorithms-for-eigenvalue-problem.html"
+  },
+  {
+    "id": "2017-01-09-product-measures-and-fubini-tonelli-theorems",
+    "title": "Product Measures and Fubini-Tonelli Theorems",
+    "date": "2017-01-09",
+    "tags": [
+      "probability theory",
+      "real analysis"
+    ],
+    "excerpt": "In this post we collect standard materials on product measures, including a description for the Komolgorov's extension theorem . There are two pillars under the theory: the monotone convergence theore…",
+    "source": "https://sylqiu.blogspot.com/2017/01/fubini-tonelli-theorem.html"
+  },
+  {
+    "id": "2017-01-06-hahn-banach-theorem-dual-spaces-and-their-representations",
+    "title": "Hahn-Banach theorem, Dual spaces and Their Representations",
+    "date": "2017-01-06",
+    "tags": [
+      "functional analysis",
+      "real analysis"
+    ],
+    "excerpt": "1.1. From Radon-Nikodym theorem to Linear functionals on L p {L^{p}} L p , 1 ≤ p &#x3C; ∞ {1\\leq p&#x3C;\\infty} 1 ≤ p &#x3C; ∞ In case 1 ≤ p ≤ ∞ {1\\leq p\\leq\\infty} 1 ≤ p ≤ ∞ , we have Hölder's inequa…",
+    "source": "https://sylqiu.blogspot.com/2017/01/hahn-banach-theorem-dual-spaces-and.html"
+  },
+  {
+    "id": "2017-01-06-finite-difference-methods-for-one-way-wave-equation",
+    "title": "Finite Difference Methods for One Way Wave Equation",
+    "date": "2017-01-06",
+    "tags": [
+      "Fourier analysis",
+      "numerical methods",
+      "PDE"
+    ],
+    "excerpt": "1.1. A prototypical example: Euler method for an ODE Already in the 18th century, Leonhard Euler had considered the problem of finding an approximation of the integral curve associated to an initial v…",
+    "source": "https://sylqiu.blogspot.com/2017/01/finite-difference-methods-for-one-way.html"
+  },
+  {
+    "id": "2017-01-01-spaces-a-first-look",
+    "title": "$ {L^{p}}$ spaces: a first look",
+    "date": "2017-01-01",
+    "tags": [
+      "functional analysis",
+      "real analysis"
+    ],
+    "excerpt": "[ Note ]: This post grows out of my need to record various basic results on L p L^p L p spaces, also to look into the details of more interesting topics including modes of convergence , dual spaces , …",
+    "source": "https://sylqiu.blogspot.com/2017/01/lp-spaces-first-look.html"
+  },
+  {
+    "id": "2016-12-17-littlewood-s-principles-lebesgue-differentiation-and-radon-n",
+    "title": "Littlewood's principles, Lebesgue differentiation and Radon-Nikodym derivative",
+    "date": "2016-12-17",
+    "tags": [
+      "real analysis"
+    ],
+    "excerpt": "There are numerous occasions when the first step of proving some result is a verification for relatively simple case, this strategy can be justified if one is able to control of \"maximal error\" from t…",
+    "source": "https://sylqiu.blogspot.com/2016/12/littlewoods-principles-lebesgue.html"
+  },
+  {
+    "id": "2016-11-22-the-notion-of-a-viscosity-solution",
+    "title": "The notion of a viscosity solution",
+    "date": "2016-11-22",
+    "tags": [
+      "PDE"
+    ],
+    "excerpt": "Recently I have been interested in a paper by Dabon and Osher on their algorithms of computing solutions to the Hamilton-Jacobi equations. The solution to such an equation, given in the Hopf-Lax formu…",
+    "source": "https://sylqiu.blogspot.com/2016/11/the-notion-of-viscosity-solution.html"
+  },
+  {
+    "id": "2016-10-21-riesz-representation-of-positive-linear-functionals",
+    "title": "Riesz Representation of Positive Linear Functionals",
+    "date": "2016-10-21",
+    "tags": [
+      "functional analysis",
+      "real analysis"
+    ],
+    "excerpt": "Recall that a measure space consists of three basic components: a set X {X} X ; a σ {\\sigma} σ -algebra M {\\mathfrak{M}} M on X {X} X ; a (positive, or unsigned) measure μ : M → [ 0 , + ∞ ] {\\mu:\\math…",
+    "source": "https://sylqiu.blogspot.com/2016/10/riesz-representation-of-positive-linear.html"
+  },
+  {
+    "id": "2016-10-04-outer-measures-hahn-kolmogorov-extension-theorem-and-lemma",
+    "title": "Outer Measures, Hahn-Kolmogorov Extension Theorem and $ {\\pi}$-$ {\\lambda}$  Lemma",
+    "date": "2016-10-04",
+    "tags": [
+      "measure theory",
+      "probability theory",
+      "real analysis"
+    ],
+    "excerpt": "Outer measure turns out to be an important construction not only appearing in measure theory, but also in probability theory. One approach of developing Lebesgue measure is via outer measure, with the…",
+    "source": "https://sylqiu.blogspot.com/2016/10/outer-measures-hahn-kolmogorov.html"
+  },
+  {
+    "id": "2016-09-14-real-analysis-abstract-integration-theory",
+    "title": "Real Analysis: Abstract Integration Theory",
+    "date": "2016-09-14",
+    "tags": [
+      "measure theory",
+      "real analysis"
+    ],
+    "excerpt": "In analysis one often makes use of a sequence to study the limiting process in some space, and consequently countable set-theoretic operations are inevitable. We would like a space that is stable unde…",
+    "source": "https://sylqiu.blogspot.com/2016/09/real-analysis-abstract-integration.html"
+  },
+  {
+    "id": "2016-08-30-structure-theorem-for-finitely-generated-modules-over-pids-j",
+    "title": "Structure theorem for finitely generated modules over PIDs, Jordan canonical forms and Cayley Hamilton's theorem.",
+    "date": "2016-08-30",
+    "tags": [
+      "algebra",
+      "linear algebra"
+    ],
+    "excerpt": "Introduction The structure theorem, stated for finitely generated modules over PIDs, is a nice and elementary example of the usefulness of method of representation (in this case, that of a ring). Many…",
+    "source": "https://sylqiu.blogspot.com/2016/08/notes-on-structure-theorem-for-finitely.html"
+  }
+]

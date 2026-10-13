@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pseudorandomness",
+    "title": "Pseudorandomness",
+    "subtitle": "A visual course — draft outline, being rewritten.",
+    "modules": [
+      {
+        "id": "m1",
+        "title": "Module 1 — One-way functions",
+        "lessons": [
+          "one-way-functions"
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Module 2 — Pseudorandom generators",
+        "lessons": []
+      },
+      {
+        "id": "m3",
+        "title": "Module 3 — The hybrid argument",
+        "lessons": []
+      }
+    ]
+  }
+]
