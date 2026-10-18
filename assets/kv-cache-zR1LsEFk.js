@@ -138,8 +138,8 @@ def longest_common_prefix(left: list[int], right: list[int]) -> int:
     return matched
 
 
-def split_node(node: RadixNode, prefix_length: int) -> RadixNode:
-    """Split a radix edge and return the node for the shared prefix."""
+def split_edge(node: RadixNode, prefix_length: int) -> RadixNode:
+    """Split a compressed edge and return the shared-prefix node."""
     ...
 
 
@@ -163,7 +163,7 @@ def match_prefix(
             right=token_ids[matched:],
         )
         if common < len(child.token_ids):
-            child = split_node(node=child, prefix_length=common)
+            child = split_edge(node=child, prefix_length=common)
             break
         node, matched = child, matched + common
     return node, matched
