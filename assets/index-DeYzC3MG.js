@@ -105,7 +105,7 @@
     <header><h1>${n(e.title)}</h1></header>
     ${e.subtitle?`<p class="sub">${n(e.subtitle)}</p>`:""}
     ${a}
-  </article>`}async function ne(){const t=await w("./data/blog.json");if(!t){h.innerHTML='<article class="page"><header><h1>Writing</h1></header><p class="dim">Nothing built.</p></article>';return}const e=o=>{const r=`#/blog/${n(o.id)}`,l=(o.preview||[]).map(c=>`<p>${n(c)}</p>`).join(""),d=(o.images||[]).map(c=>`<a class="post-thumb" href="${r}" title="${n(c.alt||"")}"><img src="${n(c.src)}" alt="${n(c.alt||"")}" loading="lazy" decoding="async"></a>`).join("");return`<li class="post">
+  </article>`}async function ne(){const t=await w("./data/blog.json");if(!t){h.innerHTML='<article class="page"><header><h1>Writing</h1></header><p class="dim">Nothing built.</p></article>';return}const e=o=>{const r=`#/blog/${n(o.id)}`,l=(o.preview||[]).map(c=>`<p>${c}</p>`).join(""),d=(o.images||[]).map(c=>`<a class="post-thumb" href="${r}" title="${n(c.alt||"")}"><img src="${n(c.src)}" alt="${n(c.alt||"")}" loading="lazy" decoding="async"></a>`).join("");return`<li class="post">
         <div class="post-head">
           <a class="post-title" href="${r}">${n(o.title)}</a>
           <span class="post-date">${n(o.date)}</span>

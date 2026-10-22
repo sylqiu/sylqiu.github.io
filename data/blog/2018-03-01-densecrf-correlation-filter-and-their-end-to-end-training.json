@@ -10,8 +10,7 @@
   "source": "https://sylqiu.blogspot.com/2018/03/topics-in-computer-vision-densecrf.html",
   "preview": [
     "In this post we will review two classical techniques in computer vision. They are",
-    "And we will review some recent advances in this field, where they are integrated into a convolutional neural network model. As we shall see, a network model need NOT be deep to achieve state of the art performance, as is the case in the object tracking.",
-    "As is the trend today, one would like to have a universal model for different computer vision tasks. Neural network models seems to have the potential of being such, although understanding such models remains still challenging."
+    "And we will review some recent advances in this field, where they are integrated into a convolutional neural network model. As we shall see, a network model need NOT be deep to achieve state of the art performance, as is the case in the object tracking."
   ],
   "images": [
     {

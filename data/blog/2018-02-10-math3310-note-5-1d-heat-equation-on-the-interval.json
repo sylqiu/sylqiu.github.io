@@ -11,8 +11,7 @@
   "source": "https://sylqiu.blogspot.com/2018/02/math3310-note-5-1d-heat-equation-on.html",
   "preview": [
     "In this note we recap and clarify on what we learned about using spectral (Fourier series) method to solve a fundamental constant coefficient linear differential equation with simple initial/boundary conditions:",
-    "In particular, we will stress the role played by the initial/boundary conditions in these problems, a point alluded way back in Note 1. And we shall discuss the connections to the Fourier series. This is an important topic that will appear in midterm so you are suggested to read this note in details and solve all the exercises.",
-    "Now the differential operator ∂ t ∂ ​ − ∂ x 2 ∂ 2 ​ should come with a boundary condition on"
+    "In particular, we will stress the role played by the initial/boundary conditions in these problems, a point alluded way back in Note 1. And we shall discuss the connections to the Fourier series. This is an important topic that will appear in midterm so you are suggested to read this note in details and solve all the exercises."
   ],
   "images": [
     {

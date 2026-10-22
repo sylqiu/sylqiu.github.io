@@ -9,9 +9,8 @@
   ],
   "source": "https://sylqiu.blogspot.com/2018/05/high-dimensional-filtering-with.html",
   "preview": [
-    "High-dimensional filtering refers to convolution with kernel depending on more than the spatial variable. Examples include the bilateral filtering ,",
-    "where the kernel k ( ⋅ ) depends on a featrure variable including both the position and the image intensity",
-    "with a similar form there is also the more complicated non-local mean filtering. In a 2009 paper (referred to as the paper below), Adams, Baek and Davis proposed a fast, novel algorithm based on permutohedral lattice , whose memory usage also scales well with dimension. This was later utilized in the mean field inference of the fully connected conditional random field model of Krähenbühl and Koltun. In this post I wish to describe some details of the permutohedral lattice approach."
+    "High-dimensional filtering refers to convolution with kernel depending on more than the spatial variable. Examples include the <em>bilateral filtering</em>,",
+    "where the kernel <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mo stretchy=\"false\">(</mo><mo>⋅</mo><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\"> {k(\\cdot)}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"mopen\">(</span><span class=\"mord\">⋅</span><span class=\"mclose\">)</span></span></span></span></span> depends on a featrure variable including both the position and the image intensity"
   ],
   "images": [
     {
