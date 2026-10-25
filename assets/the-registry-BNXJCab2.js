@@ -71,7 +71,7 @@ button:disabled { opacity:.4; cursor:default; }
 `,z=`
 <div class="wrap">
   <div class="bar">
-    <span class="title">Postmarked: The Registry <span>· one deed, three offices</span></span>
+    <span class="title">The Registry <span>· one deed, three offices</span></span>
     <span class="spacer"></span>
     <span class="clock mono" id="clock">10 worlds</span>
   </div>
