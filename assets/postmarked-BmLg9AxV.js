@@ -1,4 +1,4 @@
-import l from"./the-letters-0ZQkN_k-.js";import c from"./the-registry-BNXJCab2.js";const g=`
+import l from"./the-letters-C5LIX71l.js";import c from"./the-registry-BNXJCab2.js";const g=`
 :host { display: block; }
 * { box-sizing: border-box; }
 .game {
