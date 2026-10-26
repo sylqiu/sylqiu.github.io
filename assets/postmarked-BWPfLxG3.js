@@ -1,4 +1,4 @@
-import l from"./the-letters-C5LIX71l.js";import c from"./the-registry-BNXJCab2.js";const g=`
+import l from"./the-letters-C5LIX71l.js";import c from"./the-registry-BA8liSij.js";const g=`
 :host { display: block; }
 * { box-sizing: border-box; }
 .game {
@@ -56,4 +56,4 @@ import l from"./the-letters-C5LIX71l.js";import c from"./the-registry-BNXJCab2.j
   <div id="stage"></div>
   <div class="footer">A bad day at the post office is a distributed systems lesson.</div>
 </div>
-`,f=r=>{const e=r.shadowRoot??r.attachShadow({mode:"open"});e.innerHTML="<style>"+g+"</style>"+m;const o=e.querySelector("#stage"),n=[...e.querySelectorAll(".act")];let s=null;function i(a){s?.destroy(),o.innerHTML="";const t=document.createElement("div");t.className="scene",o.appendChild(t),s=a==="delivery"?l(t):c(t),n.forEach(d=>d.classList.toggle("on",d.dataset.act===a));try{sessionStorage.setItem("postmarked:act",a)}catch{}}const p=(()=>{try{const a=sessionStorage.getItem("postmarked:act");if(a==="registry"||a==="delivery")return a}catch{}return"delivery"})();return n.forEach(a=>a.addEventListener("click",()=>i(a.dataset.act))),i(p),{destroy(){s?.destroy(),e.innerHTML=""}}};export{f as default};
+`,b=r=>{const t=r.shadowRoot??r.attachShadow({mode:"open"});t.innerHTML="<style>"+g+"</style>"+m;const o=t.querySelector("#stage"),n=[...t.querySelectorAll(".act")];let s=null;function i(a){s?.destroy(),o.innerHTML="";const e=document.createElement("div");e.className="scene",o.appendChild(e),s=a==="delivery"?l(e):c(e),n.forEach(d=>d.classList.toggle("on",d.dataset.act===a));try{sessionStorage.setItem("postmarked:act",a)}catch{}}const p=(()=>{const a=new URLSearchParams(location.search).get("act");if(a==="registry"||a==="delivery")return a;try{const e=sessionStorage.getItem("postmarked:act");if(e==="registry"||e==="delivery")return e}catch{}return"delivery"})();return n.forEach(a=>a.addEventListener("click",()=>i(a.dataset.act))),i(p),{destroy(){s?.destroy(),t.innerHTML=""}}};export{b as default};
