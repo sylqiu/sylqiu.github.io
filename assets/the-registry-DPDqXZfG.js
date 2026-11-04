@@ -90,6 +90,7 @@ button.on { border-color:var(--gold); background:#211d12; color:var(--gold); }
 .wrap.focus .body { grid-template-columns:1fr; }
 .wrap.focus .main { border-right:none; }
 .wrap.focus .side { display:none; }
+.wrap.focus .rail { display:none; }
 .wrap.focus .legend { display:none; }
 .write { display:flex; gap:8px; align-items:baseline; padding:3px 0; font-size:10px; color:var(--dim); }
 .write .who { color:var(--text); font-weight:600; min-width:88px; }
