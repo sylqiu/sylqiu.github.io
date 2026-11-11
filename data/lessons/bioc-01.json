@@ -1,0 +1,43 @@
+{
+  "id": "bioc-01",
+  "module": "Unit 1 · Foundations & proteins",
+  "kind": "lecture",
+  "title": "Lecture 1 · Introduction and fundamental concepts",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Water is the solvent of life.</strong> Its polarity and hydrogen bonds explain high heat capacity, surface tension, and the hydrophobic effect that folds proteins and forms membranes.</li>\n<li><strong>pH is a log scale.</strong> A change of one pH unit is a tenfold change in hydrogen-ion concentration. Buffers resist that change by pairing a weak acid with its conjugate base.</li>\n<li><strong>Bicarbonate is the main extracellular buffer.</strong> The equilibrium CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ links breathing, kidney function, and acid–base balance.</li>\n<li><strong>Bonds set shape and energy.</strong> Covalent bonds store chemical energy; ionic, hydrogen, and hydrophobic interactions hold larger structures together and are individually weak enough to be reversible.</li>\n<li><strong>ATP couples reactions.</strong> Hydrolysis of ATP to ADP + Pi releases free energy that drives otherwise unfavorable reactions.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-01-a",
+        "question": "A patient hyperventilates and blows off CO₂. What happens to blood pH?",
+        "options": [
+          {
+            "text": "It rises, because less CO₂ means less carbonic acid",
+            "correct": true
+          },
+          {
+            "text": "It falls, because CO₂ is an acid",
+            "correct": false
+          },
+          {
+            "text": "It does not change, because bicarbonate is fixed",
+            "correct": false
+          },
+          {
+            "text": "It falls, because lactate rises",
+            "correct": false
+          }
+        ],
+        "explanation": "CO₂ is in equilibrium with carbonic acid. Blowing off CO₂ shifts the equilibrium left, lowering H⁺ and raising pH (respiratory alkalosis)."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

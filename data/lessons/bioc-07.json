@@ -1,0 +1,43 @@
+{
+  "id": "bioc-07",
+  "module": "Unit 2 · Carbohydrate metabolism",
+  "kind": "lecture",
+  "title": "Lecture 7 · Glycogen and glycolysis",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Glycogen is made and broken down by separate pathways.</strong> Glycogenesis uses glycogen synthase and branching enzyme; glycogenolysis uses glycogen phosphorylase and debranching enzyme.</li>\n<li><strong>Glycolysis has two phases.</strong> The investment phase consumes 2 ATP; the payoff phase produces 4 ATP and 2 NADH, for a net gain of 2 ATP and 2 NADH per glucose.</li>\n<li><strong>Pyruvate has two fates.</strong> Aerobic cells convert it to acetyl-CoA; anaerobic cells reduce it to lactate to regenerate NAD⁺.</li>\n<li><strong>Phosphofructokinase-1 is the committed step.</strong> ATP and citrate inhibit it; AMP, ADP, and fructose-2,6-bisphosphate activate it.</li>\n<li><strong>Insulin and glucagon set the direction.</strong> Insulin favors glycogen synthesis and glycolysis; glucagon favors glycogen breakdown and gluconeogenesis in the liver.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-07-a",
+        "question": "What is the net ATP yield of glycolysis per glucose?",
+        "options": [
+          {
+            "text": "2 ATP",
+            "correct": true
+          },
+          {
+            "text": "4 ATP",
+            "correct": false
+          },
+          {
+            "text": "6 ATP",
+            "correct": false
+          },
+          {
+            "text": "30 ATP",
+            "correct": false
+          }
+        ],
+        "explanation": "Two ATP are invested and four are produced, so the net gain is two ATP, plus two NADH."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

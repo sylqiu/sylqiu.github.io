@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "id": "human-biochemistry",
+    "title": "Human Biochemistry for Nursing",
+    "subtitle": "A first-year course following Dalhousie BIOC 1420 (Winter 2025) · 18 lectures · 4 units",
+    "modules": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "lessons": [
+          "bioc-course-guide"
+        ]
+      },
+      {
+        "id": "unit-1-foundations-proteins",
+        "title": "Unit 1 · Foundations & proteins",
+        "lessons": [
+          "bioc-01",
+          "bioc-02",
+          "bioc-03",
+          "bioc-04",
+          "bioc-05"
+        ]
+      },
+      {
+        "id": "unit-2-carbohydrate-metabolism",
+        "title": "Unit 2 · Carbohydrate metabolism",
+        "lessons": [
+          "bioc-06",
+          "bioc-07",
+          "bioc-08",
+          "bioc-09"
+        ]
+      },
+      {
+        "id": "unit-3-lipids",
+        "title": "Unit 3 · Lipids",
+        "lessons": [
+          "bioc-10",
+          "bioc-11",
+          "bioc-12"
+        ]
+      },
+      {
+        "id": "unit-4-energy-nutrition-information",
+        "title": "Unit 4 · Energy, nutrition & information",
+        "lessons": [
+          "bioc-13",
+          "bioc-14",
+          "bioc-15",
+          "bioc-16",
+          "bioc-17",
+          "bioc-18"
+        ]
+      }
+    ],
+    "lessonTitles": {
+      "bioc-01": "Lecture 1 · Introduction and fundamental concepts",
+      "bioc-02": "Lecture 2 · Introduction to proteins",
+      "bioc-03": "Lecture 3 · Structural and binding roles of proteins",
+      "bioc-04": "Lecture 4 · Enzymes and their catalytic roles",
+      "bioc-05": "Lecture 5 · Protein-centered applications",
+      "bioc-06": "Lecture 6 · Carbohydrates and their roles",
+      "bioc-07": "Lecture 7 · Glycogen and glycolysis",
+      "bioc-08": "Lecture 8 · The tricarboxylic acid cycle",
+      "bioc-09": "Lecture 9 · Electron transport and oxidative phosphorylation",
+      "bioc-10": "Lecture 10 · Introduction to lipids",
+      "bioc-11": "Lecture 11 · Beta oxidation and lipid metabolism",
+      "bioc-12": "Lecture 12 · Lipid-centered applications",
+      "bioc-13": "Lecture 13 · ATP and cellular energy management",
+      "bioc-14": "Lecture 14 · Metabolism and nutrition",
+      "bioc-15": "Lecture 15 · DNA and the transmission of information",
+      "bioc-16": "Lecture 16 · Transcription, RNA processing and translation",
+      "bioc-17": "Lecture 17 · DNA-centered applications",
+      "bioc-18": "Lecture 18 · RNA-centered applications",
+      "bioc-course-guide": "Course guide and syllabus map"
+    }
+  }
+]

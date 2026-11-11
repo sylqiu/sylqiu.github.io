@@ -1,0 +1,43 @@
+{
+  "id": "bioc-09",
+  "module": "Unit 2 · Carbohydrate metabolism",
+  "kind": "lecture",
+  "title": "Lecture 9 · Electron transport and oxidative phosphorylation",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>The chain passes electrons through complexes I–IV.</strong> NADH enters at complex I; FADH₂ enters at complex II. The energy released pumps protons from the matrix to the intermembrane space.</li>\n<li><strong>The proton gradient drives ATP synthase.</strong> Protons return through complex V, rotating it and phosphorylating ADP to ATP; this is chemiosmosis.</li>\n<li><strong>Oxygen is the final electron acceptor.</strong> It accepts electrons at complex IV and forms water. Without oxygen, the chain backs up and ATP production falls.</li>\n<li><strong>The yield is about 26–28 ATP per glucose.</strong> The exact number varies with shuttle use and proton leak; textbook values are approximations.</li>\n<li><strong>Uncouplers and poisons break the link.</strong> Uncouplers let protons leak across the membrane and release heat; cyanide and carbon monoxide block complex IV.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-09-a",
+        "question": "What happens to ATP production when oxygen is unavailable?",
+        "options": [
+          {
+            "text": "The electron transport chain slows and ATP falls",
+            "correct": true
+          },
+          {
+            "text": "The chain runs faster",
+            "correct": false
+          },
+          {
+            "text": "ATP synthase reverses to make oxygen",
+            "correct": false
+          },
+          {
+            "text": "NADH is no longer needed",
+            "correct": false
+          }
+        ],
+        "explanation": "Oxygen is the final electron acceptor. Without it, electrons cannot flow, the proton gradient collapses, and oxidative phosphorylation stops."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

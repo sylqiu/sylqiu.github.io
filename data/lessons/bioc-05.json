@@ -1,0 +1,43 @@
+{
+  "id": "bioc-05",
+  "module": "Unit 1 · Foundations & proteins",
+  "kind": "lecture",
+  "title": "Lecture 5 · Protein-centered applications",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Sickle cell disease is a folding disease.</strong> A single glutamate-to-valine change in the beta-globin chain creates a sticky patch; deoxygenated hemoglobin polymerizes and distorts the red cell.</li>\n<li><strong>Enzymes are diagnostic markers.</strong> Alanine aminotransferase and aspartate aminotransferase rise with liver injury; alkaline phosphatase rises with bile-duct or bone disease; creatine kinase rises after muscle damage.</li>\n<li><strong>Monoclonal antibodies are targeted proteins.</strong> They bind one epitope and are used in cancer therapy, autoimmune disease, and laboratory tests.</li>\n<li><strong>Protein therapeutics must be handled carefully.</strong> Insulin, growth hormone, and monoclonal antibodies are digested if swallowed, so most are injected; formulation and storage protect their shape.</li>\n<li><strong>Proteomics and mass spectrometry</strong> identify proteins and post-translational modifications, linking a patient sample to a molecular diagnosis.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-05-a",
+        "question": "Sickle cell disease results from which change?",
+        "options": [
+          {
+            "text": "A single amino-acid substitution in beta-globin",
+            "correct": true
+          },
+          {
+            "text": "Loss of the entire beta-globin gene",
+            "correct": false
+          },
+          {
+            "text": "A defect in heme synthesis",
+            "correct": false
+          },
+          {
+            "text": "An antibody against red blood cells",
+            "correct": false
+          }
+        ],
+        "explanation": "The classic mutation is glutamate to valine at position 6 of beta-globin. One residue changes the surface, and the polymerized protein changes the cell shape."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

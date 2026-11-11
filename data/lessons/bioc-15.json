@@ -1,0 +1,43 @@
+{
+  "id": "bioc-15",
+  "module": "Unit 4 · Energy, nutrition & information",
+  "kind": "lecture",
+  "title": "Lecture 15 · DNA and the transmission of information",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Nucleotides have a base, sugar, and phosphate.</strong> DNA uses deoxyribose and the bases A, T, C, G; RNA uses ribose and uracil instead of thymine.</li>\n<li><strong>The double helix is antiparallel.</strong> A pairs with T (two hydrogen bonds); C pairs with G (three). The sequence is read 5′ to 3′.</li>\n<li><strong>Replication is semiconservative.</strong> Helicase unwinds, DNA polymerase adds nucleotides to a primer, and each daughter duplex keeps one parental strand.</li>\n<li><strong>Mutations change sequence.</strong> Substitutions, insertions, and deletions can be silent, missense, or nonsense; trinucleotide repeats cause several inherited disorders.</li>\n<li><strong>Inheritance follows patterns.</strong> Autosomal dominant, autosomal recessive, X-linked, and mitochondrial inheritance each produce characteristic family histories.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-15-a",
+        "question": "Which base pairs with guanine in DNA?",
+        "options": [
+          {
+            "text": "Cytosine",
+            "correct": true
+          },
+          {
+            "text": "Adenine",
+            "correct": false
+          },
+          {
+            "text": "Thymine",
+            "correct": false
+          },
+          {
+            "text": "Uracil",
+            "correct": false
+          }
+        ],
+        "explanation": "Guanine pairs with cytosine through three hydrogen bonds; adenine pairs with thymine through two."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

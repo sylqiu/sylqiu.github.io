@@ -1,0 +1,43 @@
+{
+  "id": "bioc-17",
+  "module": "Unit 4 · Energy, nutrition & information",
+  "kind": "lecture",
+  "title": "Lecture 17 · DNA-centered applications",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>PCR amplifies a DNA segment.</strong> Denaturation, primer annealing, and extension are repeated; the product grows exponentially.</li>\n<li><strong>Sequencing reads the order of bases.</strong> Sanger sequencing uses chain-terminating nucleotides; next-generation sequencing reads millions of fragments in parallel.</li>\n<li><strong>CRISPR edits DNA at a targeted sequence.</strong> A guide RNA directs Cas nuclease to a site; the cell then repairs the break, allowing knockout or correction.</li>\n<li><strong>Genetic testing has limits.</strong> A variant may be pathogenic, benign, or of uncertain significance; interpretation depends on the gene, family history, and evidence.</li>\n<li><strong>Pharmacogenomics matches drugs to genes.</strong> Variants in CYP enzymes, for example, change drug metabolism and can guide dosing.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-17-a",
+        "question": "What directs Cas9 to a specific DNA sequence?",
+        "options": [
+          {
+            "text": "A guide RNA",
+            "correct": true
+          },
+          {
+            "text": "A restriction enzyme",
+            "correct": false
+          },
+          {
+            "text": "A primer",
+            "correct": false
+          },
+          {
+            "text": "An antibody",
+            "correct": false
+          }
+        ],
+        "explanation": "The guide RNA base-pairs with the target DNA, positioning Cas9 to cut at that site."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

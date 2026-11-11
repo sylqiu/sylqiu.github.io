@@ -1,0 +1,43 @@
+{
+  "id": "bioc-03",
+  "module": "Unit 1 · Foundations & proteins",
+  "kind": "lecture",
+  "title": "Lecture 3 · Structural and binding roles of proteins",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Secondary structure is local.</strong> Alpha helices and beta sheets are held by backbone hydrogen bonds; they are the recurring building blocks of folded proteins.</li>\n<li><strong>Tertiary structure is the whole chain.</strong> Hydrophobic side chains cluster inside, polar side chains face water, and disulfide bonds, salt bridges, and hydrogen bonds lock the fold.</li>\n<li><strong>Quaternary structure is assembly.</strong> Hemoglobin is a tetramer of two alpha and two beta chains; binding oxygen to one subunit makes the others bind more easily (positive cooperativity).</li>\n<li><strong>Binding depends on shape and affinity.</strong> A ligand fits a pocket through several weak interactions; affinity is described by Kd, and a lower Kd means tighter binding.</li>\n<li><strong>Collagen and antibodies show the range.</strong> Collagen uses a repeated triple helix for tensile strength; antibodies use variable loops to recognize a vast range of antigens.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-03-a",
+        "question": "Why does hemoglobin release more oxygen in exercising muscle?",
+        "options": [
+          {
+            "text": "Lower pH and higher CO₂ reduce oxygen affinity",
+            "correct": true
+          },
+          {
+            "text": "Muscle raises blood pH",
+            "correct": false
+          },
+          {
+            "text": "Hemoglobin becomes a monomer",
+            "correct": false
+          },
+          {
+            "text": "Oxygen binds covalently to heme",
+            "correct": false
+          }
+        ],
+        "explanation": "The Bohr effect: higher CO₂ and lower pH stabilize the T state, so hemoglobin releases oxygen where it is needed."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "bioc-06",
+  "module": "Unit 2 · Carbohydrate metabolism",
+  "kind": "lecture",
+  "title": "Lecture 6 · Carbohydrates and their roles",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Monosaccharides are simple sugars.</strong> Glucose is the main fuel; fructose and galactose are converted to glucose or glycolytic intermediates in the liver.</li>\n<li><strong>Disaccharides are two sugars.</strong> Sucrose is glucose + fructose, lactose is glucose + galactose, and maltose is two glucose units. Lactase splits lactose; its loss causes lactose intolerance.</li>\n<li><strong>Polysaccharides store or structure.</strong> Glycogen is the branched animal store; starch is the plant store; cellulose is indigestible fiber that adds bulk and feeds gut bacteria.</li>\n<li><strong>Glycoproteins and glycolipids decorate membranes.</strong> Sugar chains help cells recognize each other, form blood-group antigens, and clear glycoproteins from the blood.</li>\n<li><strong>GLUT transporters move glucose.</strong> GLUT4 responds to insulin in muscle and fat; GLUT1 supplies the brain and red cells; GLUT2 in liver and pancreas senses glucose.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-06-a",
+        "question": "Which carbohydrate is the main storage form of glucose in human liver and muscle?",
+        "options": [
+          {
+            "text": "Glycogen",
+            "correct": true
+          },
+          {
+            "text": "Starch",
+            "correct": false
+          },
+          {
+            "text": "Cellulose",
+            "correct": false
+          },
+          {
+            "text": "Sucrose",
+            "correct": false
+          }
+        ],
+        "explanation": "Glycogen is the branched glucose polymer stored in liver and muscle. Starch is the plant store; cellulose is fiber."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}

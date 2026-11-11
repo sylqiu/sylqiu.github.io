@@ -1,0 +1,43 @@
+{
+  "id": "bioc-02",
+  "module": "Unit 1 · Foundations & proteins",
+  "kind": "lecture",
+  "title": "Lecture 2 · Introduction to proteins",
+  "blocks": [
+    {
+      "kind": "md",
+      "html": "<h2>What to know</h2>\n<ul>\n<li><strong>Amino acids share a backbone.</strong> Each has an amino group, a carboxyl group, a hydrogen, and a side chain (R group) attached to the alpha carbon. The side chain sets charge, polarity, and size.</li>\n<li><strong>The peptide bond is planar.</strong> Condensation between the carboxyl of one amino acid and the amino group of the next releases water and gives a rigid, partial double bond.</li>\n<li><strong>Primary structure is the sequence.</strong> It is written N-terminus to C-terminus and is encoded by DNA. The sequence determines everything that follows.</li>\n<li><strong>Ionizable side chains buffer.</strong> Histidine, aspartate, glutamate, lysine, and arginine exchange protons near physiological pH and sit in enzyme active sites.</li>\n<li><strong>Disulfide bonds and chaperones.</strong> Cysteine pairs form covalent cross-links; chaperones help proteins fold and prevent aggregation.</li>\n</ul>\n<h2>Check</h2>"
+    },
+    {
+      "kind": "check",
+      "check": {
+        "qid": "bioc-02-a",
+        "question": "Which level of protein structure is the amino-acid sequence?",
+        "options": [
+          {
+            "text": "Primary",
+            "correct": true
+          },
+          {
+            "text": "Secondary",
+            "correct": false
+          },
+          {
+            "text": "Tertiary",
+            "correct": false
+          },
+          {
+            "text": "Quaternary",
+            "correct": false
+          }
+        ],
+        "explanation": "Primary structure is the linear order of amino acids. Secondary, tertiary, and quaternary structure describe local folding, the whole chain, and multi-subunit assembly."
+      }
+    },
+    {
+      "kind": "md",
+      "html": "<h2>Go deeper</h2>\n<ul>\n<li><a href=\"#/illustrations/biochem-basics\">Interactive visual explainer</a> — molecules, enzymes, glucose to ATP, and a quiz.</li>\n<li><a href=\"https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/medicine/departments/department-sites/biochemistry-molecular-biology/syllabi/BIOC1420-2025-Winter.pdf\">BIOC 1420 syllabus</a> — the source for this lecture sequence.</li>\n</ul>"
+    }
+  ],
+  "courseId": "human-biochemistry"
+}
