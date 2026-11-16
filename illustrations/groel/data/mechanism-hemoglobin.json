@@ -1,0 +1,129 @@
+{
+  "id": "hemoglobin",
+  "title": "Hemoglobin",
+  "subtitle": "T → R, cooperativity",
+  "steps": [
+    {
+      "title": "Four subunits, two dimers",
+      "text": "Hemoglobin is an α2β2 tetramer: two identical αβ dimers. Each of the four subunits carries a heme, and each heme can bind one O₂.",
+      "state": "deoxy",
+      "badge": "T state · 2HHB",
+      "cam": {
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "r": 235,
+        "polar": 74,
+        "azim": 20
+      },
+      "focus": "all",
+      "blob": 0,
+      "labels": []
+    },
+    {
+      "title": "A heme in every subunit",
+      "text": "The heme iron is held by a histidine — His F8, α87 — on the proximal side. Oxygen binds the iron on the distal side, where a second histidine (E7) helps stabilize it.",
+      "state": "deoxy",
+      "badge": "T state · 2HHB",
+      "cam": {
+        "target": "chain:A",
+        "r": 120,
+        "polar": 64,
+        "azim": -32
+      },
+      "focus": [
+        "A"
+      ],
+      "blob": 0,
+      "labels": [
+        {
+          "text": "heme pocket",
+          "chain": "A",
+          "resi": 87
+        }
+      ]
+    },
+    {
+      "title": "Oxygen binds the iron",
+      "text": "In the T state the heme pocket is strained: iron sits slightly out of the porphyrin plane, and oxygen affinity is low. Binding the first O₂ is the hard step.",
+      "state": "deoxy",
+      "badge": "T state · 2HHB",
+      "cam": {
+        "target": "chain:A",
+        "r": 105,
+        "polar": 58,
+        "azim": 40
+      },
+      "focus": [
+        "A"
+      ],
+      "blob": 0,
+      "labels": [
+        {
+          "text": "O₂ site",
+          "chain": "A",
+          "resi": 87
+        }
+      ]
+    },
+    {
+      "title": "T state: the dimers are locked",
+      "text": "Salt bridges and hydrogen bonds across the α1β2 interface hold the tetramer in the tense state. The constraints make the first oxygen binding expensive.",
+      "state": "deoxy",
+      "badge": "T state · 2HHB",
+      "cam": {
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "r": 250,
+        "polar": 84,
+        "azim": 84
+      },
+      "focus": "all",
+      "blob": 0,
+      "labels": []
+    },
+    {
+      "title": "The α1β1 dimer rotates 15°",
+      "text": "Oxygen binding at one site breaks the T-state contacts. The α1β1 dimer rotates about 15° relative to α2β2 and slides slightly — the quaternary T→R transition.",
+      "state": "oxy",
+      "badge": "R state · 1HHO",
+      "cam": {
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "r": 235,
+        "polar": 74,
+        "azim": 20
+      },
+      "focus": "all",
+      "blob": 0,
+      "labels": []
+    },
+    {
+      "title": "R state: the other sites bind faster",
+      "text": "The relaxed state binds O₂ 10–100× more tightly, so the remaining hemes fill quickly. That positive cooperativity is what turns hemoglobin's oxygen curve sigmoid instead of hyperbolic.",
+      "state": "oxy",
+      "badge": "R state · 1HHO",
+      "cam": {
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "r": 205,
+        "polar": 62,
+        "azim": 118
+      },
+      "focus": "all",
+      "blob": 0,
+      "labels": []
+    }
+  ]
+}

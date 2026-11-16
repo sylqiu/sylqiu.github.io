@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<title>GroEL / GroES — the Anfinsen cage</title>
+<style>
+  :root {
+    --amber: #f2a65a;
+    --teal: #3ec6bd;
+    --ink: #e8eef4;
+    --muted: #93a4b4;
+    --panel: rgba(10, 16, 22, 0.74);
+    --line: rgba(255,255,255,0.09);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(1300px 900px at 50% 30%, #17222d 0%, #0b1117 55%, #05080b 100%);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  #scene { position: fixed; inset: 0; z-index: 0; }
+  #scene canvas { display: block; }
+  .vignette {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(closest-side at 50% 45%, transparent 55%, rgba(0,0,0,0.55) 100%);
+  }
+  .brand {
+    position: fixed; top: max(18px, env(safe-area-inset-top)); left: 22px; z-index: 3;
+    pointer-events: none;
+  }
+  .brand h1 {
+    margin: 0; font-size: 12px; letter-spacing: 0.28em; font-weight: 600;
+    color: var(--ink); text-transform: uppercase;
+  }
+  .brand p {
+    margin: 6px 0 0; font-size: 13px; color: var(--muted); letter-spacing: 0.01em;
+  }
+  .badge {
+    position: fixed; top: max(18px, env(safe-area-inset-top)); right: 22px; z-index: 3;
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 12px; border-radius: 999px;
+    background: rgba(12,18,25,0.7); border: 1px solid var(--line);
+    font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+    backdrop-filter: blur(8px);
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+  .badge.closed .dot { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+
+  #labels { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+  .label {
+    position: absolute; transform: translate(-50%, -50%);
+    padding: 4px 9px; border-radius: 999px;
+    background: rgba(9,14,19,0.82); border: 1px solid rgba(255,255,255,0.14);
+    font-size: 11.5px; letter-spacing: 0.02em; color: #e9f0f6;
+    white-space: nowrap; opacity: 0; transition: opacity 0.45s ease;
+    backdrop-filter: blur(6px);
+  }
+  .label::before {
+    content: ""; position: absolute; left: -4px; top: 50%; width: 6px; height: 6px;
+    margin-top: -3px; border-radius: 50%; background: var(--amber);
+    box-shadow: 0 0 8px var(--amber);
+  }
+
+  .hint {
+    position: fixed; left: 50%; bottom: 232px; transform: translateX(-50%);
+    z-index: 3; font-size: 11.5px; color: rgba(190,205,218,0.55);
+    letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;
+    transition: opacity 1s ease;
+  }
+
+  .panel {
+    position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    width: min(760px, calc(100vw - 28px));
+    z-index: 4;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px 18px 14px;
+    backdrop-filter: blur(16px) saturate(120%);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  .panel-top { display: flex; align-items: center; gap: 12px; }
+  .counter { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.08em; }
+  .dots { display: flex; gap: 6px; flex: 1; }
+  .dots button {
+    width: 22px; height: 4px; border-radius: 2px; border: 0; padding: 0;
+    background: rgba(255,255,255,0.16); cursor: pointer; transition: background 0.3s ease;
+  }
+  .dots button.active { background: var(--amber); }
+  .nav { display: flex; gap: 6px; }
+  .nav button {
+    width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(255,255,255,0.04); color: var(--ink); font-size: 14px;
+    cursor: pointer; line-height: 1; transition: background 0.2s ease, opacity 0.2s ease;
+  }
+  .nav button:hover { background: rgba(255,255,255,0.1); }
+  .nav button:disabled { opacity: 0.25; cursor: default; }
+  #stepTitle { margin: 10px 0 4px; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+  #stepText { margin: 0; font-size: 14px; line-height: 1.52; color: #b7c5d3; }
+  #stepText b { color: #e9f0f6; font-weight: 600; }
+  .legend {
+    display: flex; gap: 14px; margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    font-size: 11px; color: var(--muted); flex-wrap: wrap;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 9px; height: 9px; border-radius: 3px; }
+
+  .loading {
+    position: fixed; inset: 0; z-index: 9; display: grid; place-items: center;
+    background: #070b0f; transition: opacity 0.7s ease;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;
+  }
+  .loading.done { opacity: 0; pointer-events: none; }
+  .err { position: fixed; inset: 0; z-index: 10; display: none; place-items: center; padding: 24px; text-align: center; color: #ffb4a8; font-size: 13px; background: #070b0f; }
+
+
+  .switcher { display: flex; gap: 6px; margin-top: 10px; pointer-events: auto; }
+  .switcher a {
+    font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; padding: 4px 9px;
+    border: 1px solid var(--line); border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .switcher a.active { color: #0b1016; background: var(--amber); border-color: var(--amber); font-weight: 600; }
+  .switcher-btn {
+    font: inherit; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); background: transparent; padding: 4px 9px;
+    border: 1px dashed var(--line); border-radius: 999px; cursor: pointer;
+  }
+  .switcher-btn.active { color: #0b1016; background: var(--amber); border-color: var(--amber); font-weight: 600; border-style: solid; }
+  .mech-card { display: none; }
+  body.show-mech .mech-card { display: block; }
+
+  .mech-card {
+    position: fixed; right: 22px; top: 96px; width: 264px; z-index: 3;
+    background: rgba(10,16,22,0.72); border: 1px solid var(--line);
+    border-radius: 16px; padding: 10px 12px 4px;
+    backdrop-filter: blur(14px) saturate(120%);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  }
+  .mech-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .mech-head b { color: var(--amber); font-weight: 600; letter-spacing: 0.1em; }
+  #mechSvg { display: block; width: 100%; height: auto; margin-top: 2px; }
+  .sch-trans { transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
+  #cap { transform-box: fill-box; transform-origin: 50% 100%; }
+  #folded { transform-box: fill-box; transform-origin: center; }
+
+  @media (max-width: 900px) {
+    .mech-card {
+      top: auto; right: auto; left: 50%; transform: translateX(-50%);
+      bottom: calc(max(20px, env(safe-area-inset-bottom)) + 214px);
+      width: min(420px, calc(100vw - 28px)); padding: 8px 10px 2px;
+    }
+    #mechSvg { height: 104px; width: auto; margin: 0 auto; }
+    .mech-head { font-size: 8.5px; }
+  }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 10px; }
+    .brand p { font-size: 11px; }
+    .badge { font-size: 10.5px; padding: 6px 10px; }
+    #stepTitle { font-size: 17px; }
+    #stepText { font-size: 13px; }
+    .hint { bottom: 250px; }
+    .panel { padding: 13px 14px 12px; border-radius: 16px; }
+    .legend { font-size: 10px; gap: 10px; }
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="scene"></div>
+  <div class="vignette"></div>
+
+  <div class="brand">
+    <h1>GroEL / GroES</h1>
+    <p>the Anfinsen cage</p>
+  </div>
+  <nav class="switcher">
+    <a href="?system=groel" data-system="groel">GroEL</a>
+    <a href="?system=hemoglobin" data-system="hemoglobin">Hemoglobin</a>
+    <button type="button" id="mechToggle" class="switcher-btn" aria-pressed="false">schematic</button>
+  </nav>
+  <div class="badge" id="badge"><span class="dot"></span><span id="badgeText">open · 1OEL</span></div>
+
+  <div id="labels"></div>
+  <div class="hint" id="hint">drag to orbit · scroll to zoom · ← → to step</div>
+
+  <aside class="mech-card" id="mechCard">
+    <div class="mech-head"><span>mechanism</span><b id="mechStage">two rings</b></div>
+    <svg id="mechSvg" viewBox="0 0 280 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="gCis" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#48d3c9"/><stop offset="1" stop-color="#1d807c"/>
+        </linearGradient>
+        <linearGradient id="gTrans" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#6d8fe0"/><stop offset="1" stop-color="#37539c"/>
+        </linearGradient>
+        <linearGradient id="gCap" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffc07a"/><stop offset="1" stop-color="#c97a2e"/>
+        </linearGradient>
+        <linearGradient id="gSub" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ff9a76"/><stop offset="1" stop-color="#c9533a"/>
+        </linearGradient>
+        <mask id="mCis">
+          <rect x="40" y="66" width="200" height="52" rx="14" fill="#fff"/>
+          <rect x="92" y="84" width="96" height="26" rx="9" fill="#000"/>
+        </mask>
+        <mask id="mTrans">
+          <rect x="40" y="118" width="200" height="54" rx="14" fill="#fff"/>
+          <rect x="92" y="136" width="96" height="26" rx="9" fill="#000"/>
+        </mask>
+      </defs>
+
+      <g id="rings" class="sch-trans">
+        <rect x="40" y="118" width="200" height="54" rx="14" fill="url(#gTrans)" mask="url(#mTrans)"/>
+        <rect x="40" y="118" width="200" height="54" rx="14" fill="none" stroke="rgba(255,255,255,.15)" mask="url(#mTrans)"/>
+        <rect x="40" y="66" width="200" height="52" rx="14" fill="url(#gCis)" mask="url(#mCis)"/>
+        <rect x="40" y="66" width="200" height="52" rx="14" fill="none" stroke="rgba(255,255,255,.2)" mask="url(#mCis)"/>
+      </g>
+
+      <g id="subunit" class="sch-trans" opacity="0">
+        <rect x="122" y="66" width="36" height="20" rx="7" fill="#ffd08a"/>
+        <rect x="122" y="86" width="36" height="12" fill="#e08a3c"/>
+        <rect x="122" y="98" width="36" height="20" rx="7" fill="#c9702c"/>
+        <circle cx="140" cy="108" r="3.2" fill="#fff3d6"/>
+        <g fill="#c7d3de" font-size="7.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif">
+          <text x="164" y="79">apical</text>
+          <text x="164" y="94">intermediate</text>
+          <text x="164" y="111">equator + ATP</text>
+        </g>
+      </g>
+
+      <g id="cap" class="sch-trans" opacity="0">
+        <path d="M78,66 C78,22 202,22 202,66 Z" fill="url(#gCap)"/>
+        <path d="M78,66 C78,22 202,22 202,66" fill="none" stroke="rgba(255,255,255,.25)"/>
+      </g>
+
+      <g id="atp" class="sch-trans" opacity="0">
+        <circle cx="104" cy="113" r="3" fill="#ffd08a"/>
+        <circle cx="140" cy="113" r="3" fill="#ffd08a"/>
+        <circle cx="176" cy="113" r="3" fill="#ffd08a"/>
+      </g>
+
+      <g id="substrate" class="sch-trans" opacity="0">
+        <path id="squiggle" d="M116,100 C122,84 130,110 138,94 C146,80 154,108 164,92" fill="none" stroke="#ff9a76" stroke-width="3.2" stroke-linecap="round"/>
+        <circle id="folded" cx="140" cy="98" r="10" fill="url(#gSub)" opacity="0"/>
+      </g>
+
+      <g id="arrowDown" class="sch-trans" opacity="0" stroke="#9fb0bf" stroke-width="1.6" fill="none" stroke-linecap="round">
+        <path d="M140,30 V52"/><path d="M134,46 L140,53 L146,46"/>
+      </g>
+    </svg>
+
+      <svg id="hbSvg" viewBox="0 0 280 200" aria-hidden="true" style="display:none">
+        <defs>
+          <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#48d3c9"/><stop offset="1" stop-color="#1d807c"/>
+          </linearGradient>
+          <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6d8fe0"/><stop offset="1" stop-color="#37539c"/>
+          </linearGradient>
+        </defs>
+
+        <g id="hbBottom">
+          <rect x="46" y="116" width="84" height="66" rx="12" fill="url(#gA)"/>
+          <rect x="134" y="116" width="86" height="66" rx="12" fill="url(#gB)"/>
+          <rect x="66" y="140" width="20" height="10" rx="3" fill="#f2a65a"/>
+          <rect x="154" y="140" width="20" height="10" rx="3" fill="#f2a65a"/>
+          <text x="52" y="196" font-size="8" fill="#9fb0bf">α2</text>
+          <text x="140" y="196" font-size="8" fill="#9fb0bf">β2</text>
+        </g>
+
+        <g id="hbTop">
+          <rect x="46" y="40" width="84" height="66" rx="12" fill="url(#gA)"/>
+          <rect x="134" y="40" width="86" height="66" rx="12" fill="url(#gB)"/>
+          <rect x="66" y="64" width="20" height="10" rx="3" fill="#f2a65a"/>
+          <rect x="154" y="64" width="20" height="10" rx="3" fill="#f2a65a"/>
+          <text x="52" y="34" font-size="8" fill="#9fb0bf">α1</text>
+          <text x="140" y="34" font-size="8" fill="#9fb0bf">β1</text>
+        </g>
+
+        <circle class="o2" cx="76" cy="60" r="3.4" fill="#ff8a6a" opacity="0"/>
+        <circle class="o2" cx="164" cy="60" r="3.4" fill="#ff8a6a" opacity="0"/>
+        <circle class="o2" cx="76" cy="136" r="3.4" fill="#ff8a6a" opacity="0"/>
+        <circle class="o2" cx="164" cy="136" r="3.4" fill="#ff8a6a" opacity="0"/>
+
+        <g id="hbArc" opacity="0" stroke="#f2a65a" stroke-width="1.6" fill="none" stroke-linecap="round">
+          <path d="M214,30 A64,64 0 0 1 250,78"/>
+          <path d="M244,70 L250,80 L239,80" fill="none"/>
+        </g>
+      </svg>
+  </aside>
+
+  <div class="panel">
+    <div class="panel-top">
+      <div class="counter" id="counter">01 / 06</div>
+      <div class="dots" id="dots"></div>
+      <div class="nav">
+        <button id="prev" aria-label="previous step">←</button>
+        <button id="next" aria-label="next step">→</button>
+      </div>
+    </div>
+    <h2 id="stepTitle">—</h2>
+    <p id="stepText">—</p>
+    <div class="legend">
+      <span><i class="sw" style="background:#3ec6bd"></i>cis ring</span>
+      <span><i class="sw" style="background:#5b7fd4"></i>trans ring</span>
+      <span><i class="sw" style="background:#f2a65a"></i>GroES cap</span>
+      <span><i class="sw" style="background:#e07a5f"></i>substrate</span>
+      <span id="pdbNote" style="margin-left:auto; opacity:.7">PDB 1OEL / 1AON</span>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">assembling</div>
+  <div class="err" id="err">Could not load the structure data.</div>
+
+  <script type="module" src="./main.js?v=20261115b"></script>
+</body>
+</html>

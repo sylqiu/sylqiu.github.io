@@ -1,0 +1,215 @@
+{
+  "id": "groel",
+  "title": "GroEL / GroES",
+  "subtitle": "the Anfinsen cage",
+  "steps": [
+    {
+      "title": "An open barrel with a sticky rim",
+      "text": "GroEL is two rings of seven subunits. Each subunit's <b>apical domain</b> lines the mouth of the ring, and its inner face is hydrophobic — a sticky surface for unfolded proteins.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": [
+          0,
+          -30,
+          0
+        ],
+        "r": 500,
+        "polar": 76,
+        "azim": 22
+      },
+      "focus": "all",
+      "blob": 0,
+      "blobY": 50,
+      "labels": []
+    },
+    {
+      "title": "Unfolded protein docks at the rim",
+      "text": "An unfolded chain exposes hydrophobic patches and binds across several apical domains at the mouth. It sits <b>at the rim</b>, not floating above the barrel — that is the view you see here.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": [
+          0,
+          10,
+          0
+        ],
+        "r": 400,
+        "polar": 58,
+        "azim": 8
+      },
+      "focus": "all",
+      "blob": 0.8,
+      "blobY": 74,
+      "labels": [
+        {
+          "text": "substrate held at the apical tips",
+          "point": [
+            0,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATP binds the equator — the engine",
+      "text": "Every subunit has an <b>ATP site</b> in its equatorial domain, ~70 Å from the substrate. ATP binding is cooperative: the seven sites of one ring fill together. This is what powers everything that follows.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": "chain:A2",
+        "r": 165,
+        "polar": 66,
+        "azim": -38
+      },
+      "focus": [
+        "A"
+      ],
+      "blob": 0.8,
+      "blobY": 74,
+      "labels": [
+        {
+          "text": "ATP site",
+          "chain": "A2",
+          "resi": 87
+        }
+      ]
+    },
+    {
+      "title": "ATP swings the apical domains",
+      "text": "ATP closes the equatorial cleft and the apical domains swing upward and inward — the twist here is a morph between the open and closed crystal structures, not a whole-ring spin. The hydrophobic tips release the chain into the cavity, and a new surface appears: the GroES-binding interface.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": [
+          0,
+          12,
+          0
+        ],
+        "r": 380,
+        "polar": 54,
+        "azim": 40
+      },
+      "focus": "all",
+      "blob": 0.55,
+      "blobY": 46,
+      "labels": [
+        {
+          "text": "GroES interface exposed",
+          "point": [
+            0,
+            64,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GroES docks on that interface",
+      "text": "<b>GroES</b> — seven subunits — binds only the ATP-loaded ring, because ATP created the surface it grips. The lid encloses the cavity and flips its lining from hydrophobic to hydrophilic. Only <b>one</b> ring is capped at a time: the symmetric two-cap “football” is an in-vitro side state, not the working cycle.",
+      "state": "closed",
+      "badge": "closed · 1AON",
+      "cam": {
+        "target": [
+          0,
+          10,
+          0
+        ],
+        "r": 540,
+        "polar": 66,
+        "azim": 30
+      },
+      "focus": "all",
+      "blob": 0.5,
+      "blobY": 46,
+      "labels": [
+        {
+          "text": "GroES lid",
+          "target": "cap"
+        }
+      ]
+    },
+    {
+      "title": "Folding inside, hydrolysis as the timer",
+      "text": "The protein folds in isolation, shielded from aggregation. Meanwhile the seven ATPs in this ring hydrolyze to ADP + Pi. Hydrolysis weakens the GroES interface — it is the clock, not the folding machine.",
+      "state": "closed",
+      "badge": "closed · 1AON",
+      "cam": {
+        "target": [
+          0,
+          20,
+          0
+        ],
+        "r": 460,
+        "polar": 44,
+        "azim": 62
+      },
+      "focus": "all",
+      "blob": 0.35,
+      "blobY": 44,
+      "labels": [
+        {
+          "text": "ATP → ADP + Pi",
+          "chain": "A",
+          "resi": 87
+        }
+      ]
+    },
+    {
+      "title": "The cage opens; the other ring fires",
+      "text": "GroES dissociates and the folded protein leaves. The <b>other ring</b> is not idle: it has already bound substrate and ATP, and its ATP binding is what helps pry the lid off this ring. Then it becomes the capped ring — the two rings alternate, one ATP cycle each.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": [
+          0,
+          -10,
+          0
+        ],
+        "r": 560,
+        "polar": 72,
+        "azim": 150
+      },
+      "focus": "all",
+      "blob": 0.4,
+      "blobY": 104,
+      "labels": [
+        {
+          "text": "trans ring — next cycle",
+          "chain": "A",
+          "resi": 87
+        }
+      ]
+    },
+    {
+      "title": "Roles swap — the loop restarts",
+      "text": "The old cis ring is now trans: it releases ADP and binds fresh substrate and ATP. The ring that was waiting becomes cis and gets capped in turn. Same machine, roles exchanged.",
+      "state": "open",
+      "badge": "open · 1OEL",
+      "cam": {
+        "target": [
+          0,
+          -10,
+          0
+        ],
+        "r": 560,
+        "polar": 74,
+        "azim": 214
+      },
+      "focus": "all",
+      "blob": 0,
+      "blobY": 50,
+      "labels": [
+        {
+          "text": "next cis ring",
+          "point": [
+            0,
+            70,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}
