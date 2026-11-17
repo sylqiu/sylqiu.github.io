@@ -231,6 +231,10 @@ function buildModel(src, opts = {}) {
     group.updateMatrixWorld(true);
   }
 
+  const invWorld = group.matrixWorld.clone().invert();
+  const centerLocal = new THREE.Vector3(0, 0, 0).applyMatrix4(invWorld);
+  const worldXLocal = new THREE.Vector3(1, 0, 0).applyQuaternion(group.quaternion.clone().invert()).normalize();
+
   for (const [name, rec] of Object.entries(chains)) {
     rec.world = rec.points.map(p => p.clone().applyMatrix4(group.matrixWorld));
   }
@@ -258,7 +262,7 @@ function buildModel(src, opts = {}) {
     }
   }
 
-  return { group, chains, capSet, capGroup, topRing };
+  return { group, chains, capSet, capGroup, topRing, centerLocal, worldXLocal };
 }
 
 function anchorsFor(model, src) {
@@ -294,7 +298,7 @@ function anchorsFor(model, src) {
 }
 
 let DATA, MECH, models = {}, stepIndex = 0, currentState = null, prevState = null, blob, blobBase, blobAmount = 0, blobTarget = 0;
-let linkLine = null, atpPulse = null;
+let linkLine = null, atpPulse = null, atpPulseB = null;
 let morphGroup = null, morphSets = [], morphT = 0, morphActive = false;
 let loopTimer = null, loopPhase = 0, blobYOverride = null;
 const clock = new THREE.Clock();
@@ -459,6 +463,14 @@ async function init() {
     atpPulse.position.copy(a);
     atpPulse.visible = false;
     scene.add(atpPulse);
+
+    atpPulseB = new THREE.Mesh(
+      new THREE.SphereGeometry(3.0, 16, 12),
+      new THREE.MeshStandardMaterial({ color: 0xffd08a, emissive: 0xffb347, emissiveIntensity: 1.8, transparent: true, opacity: 0.8 })
+    );
+    atpPulseB.position.copy(models.open.anchors.residue('A', 87));
+    atpPulseB.visible = false;
+    scene.add(atpPulseB);
   }
 
   document.querySelectorAll('.switcher a').forEach(a => a.classList.toggle('active', a.dataset.system === SYSTEM));
@@ -489,7 +501,13 @@ async function init() {
     const box = new THREE.Box3();
     for (const m of Object.values(models)) box.expandByObject(m.group);
     const f = v => v.toArray().map(n => n.toFixed(1)).join(',');
-    document.title = 'BBOX ' + f(box.min) + ' | ' + f(box.max) + ' | states ' + Object.keys(models).join(',');
+    let capInfo = '';
+    if (models.closed && models.closed.capGroup) {
+      models.closed.group.updateMatrixWorld(true);
+      const cb = new THREE.Box3().setFromObject(models.closed.capGroup);
+      capInfo = ' | cap ' + f(cb.min) + ' ; ' + f(cb.max);
+    }
+    document.title = 'BBOX ' + f(box.min) + ' | ' + f(box.max) + ' | states ' + Object.keys(models).join(',') + capInfo;
   }
   el.loading.classList.add('done');
   animate();
@@ -707,8 +725,20 @@ function applyCyclePhase() {
     m.targetOpacity = k === (closed ? 'closed' : 'open') ? 1 : 0;
   }
   if (models.closed && models.closed.capGroup) {
-    models.closed.capGroup.rotation.x = bottom ? Math.PI : 0;
-    models.closed.capTargetY = closed ? 0 : 70;
+    const m = models.closed;
+    const cg = m.capGroup;
+    if (bottom && closed) {
+      const q = new THREE.Quaternion().setFromAxisAngle(m.worldXLocal, Math.PI);
+      cg.quaternion.copy(q);
+      cg.position.copy(m.centerLocal).sub(m.centerLocal.clone().applyQuaternion(q));
+      m.capTargetY = cg.position.y;
+    } else if (closed) {
+      cg.quaternion.identity();
+      cg.position.set(0, 0, 0);
+      m.capTargetY = 0;
+    } else {
+      m.capTargetY = 70;
+    }
   }
   blobTarget = closed ? 0.35 : 0.45;
   blobYOverride = closed ? (bottom ? -44 : 44) : (bottom ? -108 : 108);
@@ -717,12 +747,14 @@ function applyCyclePhase() {
 
 function startCycleLoop() {
   stopCycleLoop();
-  loopPhase = 1;
+  const forced = parseInt(params.get('loopPhase') || '', 10);
+  loopPhase = Number.isFinite(forced) ? forced : 1;
   applyCyclePhase();
+  if (Number.isFinite(forced)) return;
   loopTimer = setInterval(() => {
     loopPhase = (loopPhase + 1) % 4;
     applyCyclePhase();
-  }, 5000);
+  }, 2600);
 }
 
 function goTo(i, instant = false) {
@@ -733,6 +765,7 @@ function goTo(i, instant = false) {
 
   if (linkLine) linkLine.visible = SYSTEM === 'groel' && stepIndex === 2;
   if (atpPulse) atpPulse.visible = SYSTEM === 'groel' && (stepIndex === 2 || stepIndex === 5);
+  if (atpPulseB) atpPulseB.visible = SYSTEM === 'groel' && stepIndex === 6;
   if (models.closed && models.closed.capGroup) {
     const cg = models.closed.capGroup;
     if (step.state === 'closed' && prevState !== 'closed') {
@@ -871,6 +904,11 @@ function animate() {
     const p = 1 + 0.22 * Math.sin(t * 3.2);
     atpPulse.scale.setScalar(p);
     atpPulse.material.opacity = 0.55 + 0.4 * Math.sin(t * 3.2);
+  }
+  if (atpPulseB && atpPulseB.visible) {
+    const p = 1 + 0.22 * Math.sin(t * 3.0 + 1);
+    atpPulseB.scale.setScalar(p);
+    atpPulseB.material.opacity = 0.55 + 0.4 * Math.sin(t * 3.0 + 1);
   }
 
   if (morphActive) {
