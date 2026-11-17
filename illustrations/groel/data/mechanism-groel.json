@@ -200,16 +200,7 @@
       "focus": "all",
       "blob": 0,
       "blobY": 50,
-      "labels": [
-        {
-          "text": "next cis ring",
-          "point": [
-            0,
-            70,
-            0
-          ]
-        }
-      ]
+      "labels": []
     }
   ]
 }

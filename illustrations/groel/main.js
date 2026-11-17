@@ -702,16 +702,17 @@ function stopCycleLoop() {
 
 function applyCyclePhase() {
   const closed = loopPhase % 2 === 0;
-  const flip = loopPhase >= 2;
+  const bottom = loopPhase >= 2;
   for (const [k, m] of Object.entries(models)) {
     m.targetOpacity = k === (closed ? 'closed' : 'open') ? 1 : 0;
   }
   if (models.closed && models.closed.capGroup) {
+    models.closed.capGroup.rotation.x = bottom ? Math.PI : 0;
     models.closed.capTargetY = closed ? 0 : 70;
   }
   blobTarget = closed ? 0.35 : 0.45;
-  blobYOverride = closed ? 44 : 108;
-  tweenTo({ target: [0, 0, 0], r: 560, polar: flip ? 106 : 74, azim: flip ? 200 : 20 }, false);
+  blobYOverride = closed ? (bottom ? -44 : 44) : (bottom ? -108 : 108);
+  tweenTo({ target: [0, bottom ? -20 : 0, 0], r: 560, polar: bottom ? 108 : 74, azim: 20 }, false);
 }
 
 function startCycleLoop() {
