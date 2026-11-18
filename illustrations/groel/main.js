@@ -241,6 +241,7 @@ function buildModel(src, opts = {}) {
 
   // colour by position, not by PDB chain label: the cis (top) ring is always teal
   let topRing = null;
+  let capBottomShift = 0;
   if (src.rings && src.rings.length === 2) {
     const meanY = names => {
       let s = 0, n = 0;
@@ -262,7 +263,14 @@ function buildModel(src, opts = {}) {
     }
   }
 
-  return { group, chains, capSet, capGroup, topRing, centerLocal, worldXLocal };
+  if (src.rings && topRing) {
+    let topMax = -Infinity, botMin = Infinity;
+    for (const nm of topRing) for (const w of chains[nm].world) topMax = Math.max(topMax, w.y);
+    for (const nm of src.rings.flat()) if (!topRing.includes(nm)) for (const w of chains[nm].world) botMin = Math.min(botMin, w.y);
+    if (Number.isFinite(topMax) && Number.isFinite(botMin)) capBottomShift = topMax + botMin;
+  }
+
+  return { group, chains, capSet, capGroup, topRing, centerLocal, worldXLocal, capBottomShift };
 }
 
 function anchorsFor(model, src) {
@@ -297,7 +305,8 @@ function anchorsFor(model, src) {
   };
 }
 
-let DATA, MECH, models = {}, stepIndex = 0, currentState = null, prevState = null, blob, blobBase, blobAmount = 0, blobTarget = 0;
+let DATA, MECH, models = {}, stepIndex = 0, currentState = null, prevState = null, blob, blobB, blobBase, blobAmount = 0, blobTarget = 0;
+let blobBAmount = 0, blobBTarget = 0, blobBY = -74;
 let linkLine = null, atpPulse = null, atpPulseB = null;
 let morphGroup = null, morphSets = [], morphT = 0, morphActive = false;
 let loopTimer = null, loopPhase = 0, blobYOverride = null;
@@ -529,6 +538,11 @@ function makeBlob() {
   blob.position.set(0, 50, 0);
   blob.visible = false;
   scene.add(blob);
+
+  blobB = new THREE.Mesh(geo, mat.clone());
+  blobB.position.set(0, -74, 0);
+  blobB.visible = false;
+  scene.add(blobB);
 }
 
 let blobFrame = 0;
@@ -552,6 +566,17 @@ function updateBlob(dt, t) {
   }
   pos.needsUpdate = true;
   if (++blobFrame % 3 === 0) blob.geometry.computeVertexNormals();
+
+  if (blobB) {
+    blobBAmount += (blobBTarget - blobBAmount) * Math.min(1, dt * 4);
+    const visB = blobBAmount > 0.02;
+    blobB.visible = visB;
+    if (visB) {
+      blobB.scale.setScalar(15 + 11 * blobBAmount);
+      blobB.material.opacity = 0.92 * blobBAmount;
+      blobB.position.y += (blobBY - blobB.position.y) * Math.min(1, dt * 3);
+    }
+  }
 }
 
 /* ---------- camera choreography ---------- */
@@ -731,6 +756,8 @@ function applyCyclePhase() {
       const q = new THREE.Quaternion().setFromAxisAngle(m.worldXLocal, Math.PI);
       cg.quaternion.copy(q);
       cg.position.copy(m.centerLocal).sub(m.centerLocal.clone().applyQuaternion(q));
+      const upLocal = new THREE.Vector3(0, 1, 0).applyQuaternion(m.group.quaternion.clone().invert());
+      cg.position.addScaledVector(upLocal, m.capBottomShift);
       m.capTargetY = cg.position.y;
     } else if (closed) {
       cg.quaternion.identity();
@@ -740,8 +767,12 @@ function applyCyclePhase() {
       m.capTargetY = 70;
     }
   }
-  blobTarget = closed ? 0.35 : 0.45;
-  blobYOverride = closed ? (bottom ? -44 : 44) : (bottom ? -108 : 108);
+  blobTarget = bottom ? 0 : (closed ? 0.35 : 0.45);
+  blobYOverride = closed ? 44 : 108;
+  if (blobB) {
+    blobBTarget = bottom ? (closed ? 0.35 : 0.45) : 0.45;
+    blobBY = bottom ? (closed ? -44 : -108) : -74;
+  }
   tweenTo({ target: [0, bottom ? -20 : 0, 0], r: 560, polar: bottom ? 108 : 74, azim: 20 }, false);
 }
 
@@ -811,6 +842,7 @@ function goTo(i, instant = false) {
     }
   }
   blobTarget = step.blob || 0;
+  if (blobB && stepIndex !== MECH.steps.length - 1) blobBTarget = 0;
   if (stepIndex === MECH.steps.length - 1) startCycleLoop(); else stopCycleLoop();
   tweenTo(step.cam, instant);
   renderLabels(step);
